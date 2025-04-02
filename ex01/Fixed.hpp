@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdausque <tdausque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/30 13:00:21 by tdausque          #+#    #+#             */
-/*   Updated: 2025/04/02 11:14:23 by tdausque         ###   ########.fr       */
+/*   Created: 2025/04/02 10:23:03 by tdausque          #+#    #+#             */
+/*   Updated: 2025/04/02 11:44:29 by tdausque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
 class	Fixed
 {
@@ -21,8 +22,13 @@ class	Fixed
 	public:
 		Fixed();
 		Fixed(const Fixed& other);
+    Fixed(const int nb);
+    Fixed(const float ft);
 		~Fixed();
 		Fixed&	operator=(const Fixed& op);
+    Fixed&  operator<<();
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
+    float toFloat(void) const;
+    int   toInt(void) const;
 };

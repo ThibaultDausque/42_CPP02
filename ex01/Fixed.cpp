@@ -45,7 +45,28 @@ int	Fixed::getRawBits(void) const
 	return (this->_nb);
 }
 
-void	Fixed::setRawBits(int const raw)
+void  Fixed::setRawBits(int const raw)
 {
-	this->_nb = raw;
+  this->_nb = raw;
 }
+
+float Fixed::toFloat(void) const
+{
+  return ((float)_nb / 1 << _bits);
+}
+
+int Fixed::toInt(void) const
+{
+
+}
+
+std::ostream& Fixed::operator<<(std::ostream &o, const Fixed& op)
+{
+
+}
+
+
+
+
+
+
