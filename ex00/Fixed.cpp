@@ -17,13 +17,13 @@ const int	Fixed::_bits = 8;
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
-  this->_nb = 0;
+	this->_nb = 0;
 }
 
-Fixed::Fixed(const Fixed& other)
+Fixed::Fixed(const Fixed& obj)
 {
-  std::cout << "Copy constructor called" << std::endl;
-	*this = other;
+	std::cout << "Copy constructor called" << std::endl;
+	*this = obj;
 }
 
 Fixed::~Fixed()
@@ -31,11 +31,11 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed&	Fixed::operator=(const Fixed& op)
+Fixed&	Fixed::operator=(const Fixed& x)
 {
-  std::cout << "Copy assignement operator called" << std::endl;
-	if (this != &op)
-		this->_nb = op._nb;
+	std::cout << "Copy assignement operator called" << std::endl;
+	if (this != &x)
+		this->_nb = x._nb;
 	return (*this);
 }
 

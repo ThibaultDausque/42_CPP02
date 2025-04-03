@@ -16,19 +16,19 @@
 class	Fixed
 {
 	private:
-		int					      _nb;
+		int					_nb;
 		static const int	_bits;
 
 	public:
 		Fixed();
 		Fixed(const Fixed& other);
-    Fixed(const int nb);
-    Fixed(const float ft);
+		Fixed(const int nb);
+		Fixed(const float ft);
 		~Fixed();
 		Fixed&	operator=(const Fixed& op);
-    Fixed&  operator<<();
+		Fixed&  operator<<(std::ostream &o, const Fixed& op);
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
-    float toFloat(void) const;
-    int   toInt(void) const;
+		float	toFloat(void) const;
+		int		toInt(void) const;
 };
