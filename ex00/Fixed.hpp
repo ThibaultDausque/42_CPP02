@@ -12,17 +12,18 @@
 
 #include <iostream>
 
-class	Fixed
+class Fixed
 {
 	private:
-		int					      _nb;
-		static const int	_bits;
-
+		int					_nb;
+		const static int	_bits;
+	
 	public:
 		Fixed();
-		Fixed(const Fixed& other);
+		Fixed(const Fixed&);
+		Fixed&	operator=(const Fixed& x);
 		~Fixed();
-		Fixed&	operator=(const Fixed& op);
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 };
+
