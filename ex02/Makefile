@@ -6,14 +6,14 @@
 #    By: tdausque <tdausque@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/04 14:50:50 by tdausque          #+#    #+#              #
-#    Updated: 2025/04/04 14:50:58 by tdausque         ###   ########.fr        #
+#    Updated: 2025/04/04 19:40:52 by tdausque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = g++
 SRCS = Fixed.cpp\
 	main.cpp
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 RM = rm -f
 OBJS_DIR = objs
 OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
