@@ -52,12 +52,12 @@ void  Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-  return ((float)_nb / 1 << _bits);
+  return ((float)this->_nb / (float)(1 << _bits));
 }
 
 int Fixed::toInt(void) const
 {
-
+	return (this->_nb >> _bits);
 }
 
 std::ostream& Fixed::operator<<(std::ostream &o, const Fixed& op)
