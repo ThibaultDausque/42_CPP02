@@ -6,7 +6,7 @@
 /*   By: tdausque <tdausque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 10:23:03 by tdausque          #+#    #+#             */
-/*   Updated: 2025/04/04 19:55:55 by tdausque         ###   ########.fr       */
+/*   Updated: 2025/04/04 21:03:10 by tdausque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ Fixed	Fixed::operator*(const Fixed& op)
 {
 	Fixed result;
 
-	result.setRawBits(this->getRawBits() * op.getRawBits());
+	result.setRawBits((this->getRawBits() * op.getRawBits()) >> _bits);
 	return (result);
 }
 
@@ -141,32 +141,28 @@ Fixed	Fixed::min(Fixed& a, Fixed& b)
 {
 	if (a._nb < b._nb)
 		return (a);
-	else
-		return (b);
+	return (b);
 }
 
 const Fixed	Fixed::min(const Fixed& a, const Fixed& b)
 {
 	if (a._nb < b._nb)
 		return (a);
-	else
-		return (b);
+	return (b);
 }
 
 Fixed	Fixed::max(Fixed& a, Fixed& b)
 {
 	if (a._nb < b._nb)
 		return (b);
-	else
-		return (a);
+	return (a);
 }
 
 const Fixed	Fixed::max(const Fixed& a, const Fixed& b)
 {
 	if (a._nb < b._nb)
 		return (b);
-	else
-		return (a);
+	return (a);
 }
 
 int	Fixed::getRawBits(void) const
